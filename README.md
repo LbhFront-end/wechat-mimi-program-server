@@ -1,12 +1,12 @@
 # 小程序接口文档
 
-# 说明
+## 说明
 
 前缀: `/v1` ，通过小程序wx.login返回的code, 进行jwt加密后存入数据库返回token。请求其他接口使用 Basic Auth, Username 为token即可请求
 
-# 令牌
+### 令牌
 
-## 获取令牌
+#### 获取令牌
 
 **URL**:
 
@@ -30,7 +30,7 @@ POST      /token
 }
 ```
 
-## 验证令牌
+#### 验证令牌
 
 **URL**:
 
@@ -40,7 +40,7 @@ POST     /token/verify
 
 **Parameters**:
 
- - token: 令牌
+* token: 令牌
 
 **Response Status** 201:
 
@@ -50,9 +50,9 @@ POST     /token/verify
 }
 ```
 
-# 期刊
+## 期刊
 
-## 获取最新一期
+### 获取最新一期
 
 **URL**:
 
@@ -90,7 +90,7 @@ GET      /classic/latest
 
 返回期刊的详细信息
 
-## 获取当前一期的下一期
+### 获取当前一期的下一期
 
 **URL**:
 
@@ -118,7 +118,7 @@ GET      /classic/<int:index>/next
 }
 ```
 
-## 获取某一期详细信息
+### 获取某一期详细信息
 
 **URL**:
 
@@ -147,7 +147,7 @@ GET      /classic/<int:type>/<int:id>
 }
 ```
 
-## 获取当前一期的上一期
+### 获取当前一期的上一期
 
 **URL**:
 
@@ -176,7 +176,7 @@ GET     /classic/<int:index>/previous
 }
 ```
 
-## 获取点赞信息
+### 获取点赞信息
 
 **URL**:
 
@@ -199,7 +199,7 @@ GET     classic/<int:type>/<int:id>/favor
 }
 ```
 
-## 获取我喜欢的期刊
+### 获取我喜欢的期刊
 
 **URL**:
 
@@ -244,9 +244,9 @@ GET    /classic/favor
 
 返回喜欢期刊的列表
 
-# 书籍
+## 书籍
 
-## 获取热门书籍(概要)
+### 获取热门书籍(概要)
 
 **URL**:
 
@@ -296,7 +296,7 @@ GET      /book/hot_list
 
 返回一个列表，包含所有热门书籍的概要信息
 
-## 获取书籍短评
+### 获取书籍短评
 
 **URL**:
 
@@ -328,7 +328,7 @@ GET      /book/<int:book_id>/short_comment
 * comment: 一个评论的列表, 包含用户对书籍的评论及对应数量的字典
 * book_id: 书籍id
 
-## 获取喜欢书籍数量
+### 获取喜欢书籍数量
 
 **URL**:
 
@@ -348,7 +348,7 @@ GET      /book/favor/count
 
 * count: 返回我喜欢的书籍数量
 
-## 获取书籍点赞情况
+### 获取书籍点赞情况
 
 **URL**:
 
@@ -370,7 +370,7 @@ GET      /book/<int:book_id>/favor
 }
 ```
 
-## 新增短评
+### 新增短评
 
 **URL**:
 
@@ -393,7 +393,7 @@ POST      /book/add/short_comment
 }
 ```
 
-## 获取热搜关键字
+### 获取热搜关键字
 
 **URL**:
 
@@ -418,7 +418,7 @@ GET  /book/hot_keyword
     }
 ```
 
-## 书籍搜索
+### 书籍搜索
 
 **URL**:
 
@@ -441,9 +441,7 @@ GET  /book/search
 {
         "books": [
                 {
-                        "author": [
-                                "Luciano Ramalho"
-                        ],
+                        "author": ["Luciano Ramalho"],
                         "binding": "Paperback",
                         "category": "编程",
                         "id": 195,
@@ -457,7 +455,7 @@ GET  /book/search
                         "pubdate": "2015-8-20",
                         "publisher": "O'Reilly Media",
                         "subtitle": "",
-                        "summary": "Learn how to write idiomatic, effective Python code by leveraging its best features...
+                        "summary": "Learn how to write idiomatic, effective Python code by leveraging its best features...",
                 },
                 {
                         "author": [
@@ -477,7 +475,7 @@ GET  /book/search
                         "pubdate": "2014-1",
                         "publisher": "中央编译出版社",
                         "subtitle": "名画密码与大师传承",
-                        "summary": "《艺术谱系》一书以独特的视角构建出一部通俗易懂的西方艺术发展史...
+                        "summary": "《艺术谱系》一书以独特的视角构建出一部通俗易懂的西方艺术发展史...",
                         "translator": [
                                 "徐效军"
                         ]
@@ -524,7 +522,7 @@ GET  /book/search
 
 **Response_description**: 返回包含书籍详细内容或简介内容的列表
 
-## 获取书籍详细信息
+### 获取书籍详细信息
 
 **URL**:
 
@@ -564,9 +562,9 @@ GET  /book/<id>/detail
 }
 ```
 
-# 点赞
+## 点赞
 
-## 进行点赞
+### 进行点赞
 
 **URL**:
 
@@ -589,7 +587,7 @@ POST      /like
 }
 ```
 
-## 取消点赞
+### 取消点赞
 
 **URL**:
 
@@ -599,8 +597,8 @@ POST     /like/cancel
 
 **Parameters**:
 
-> - art_id: 点赞对象id
-> - type：点赞类型
+* art_id: 点赞对象id
+* type：点赞类型
 
 **Response Status** 201:
 
@@ -612,15 +610,15 @@ POST     /like/cancel
 }
 ```
 
-# 数据库表
+## 数据库表
 
 ![image-20201103143928099](./static/images/database.png)
 
-# 运行node后端服务
+## 运行node后端服务
 
 ``` shell
 # 安装依赖
-npm i 
+npm i
 # 修改config 里面的 mysql 相关database配置
 
 # 运行服务
