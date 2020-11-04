@@ -24,7 +24,7 @@ POST      /token
 
 ``` json
 {
-        "token": 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjIsInNjb3BlIjo4LCJpYXQiOjE2MDQyNzkzNTksImV4cCI6MTYwNjg3MTM1OX0.RC8OlbAgVBxwUNFc04NvzqLKRHS_ORUYIqvYMqrl-Iw',
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjIsInNjb3BlIjo4LCJpYXQiOjE2MDQyNzkzNTksImV4cCI6MTYwNjg3MTM1OX0.RC8OlbAgVBxwUNFc04NvzqLKRHS_ORUYIqvYMqrl-Iw",
         "msg": "ok",
         "request": "POST  /token"
 }
